@@ -1,0 +1,32 @@
+<!-- search.ejs -->
+<%- include('partials/header') %>
+
+<h1>Search Results</h1>
+
+<!-- Search form -->
+<form action="/admin/search" method="GET">
+    <div class="form-group">
+        <label for="keyword">Search Username:</label>
+        <input type="text" class="form-control" id="keyword" name="keyword" placeholder="Enter username">
+    </div>
+    <button type="submit" class="btn btn-primary">Search</button>
+</form>
+
+<!-- Display the search results here -->
+<table>
+    <!-- Table headers -->
+    <tr>
+        <th>Username</th>
+        <th>Secret</th>
+    </tr>
+
+    <!-- Loop through and display the search results -->
+    <% user.forEach(user => { %>
+        <tr>
+            <td><%= user.username %></td>
+            <td><%= user.secret %></td>
+        </tr>
+    <% }); %>
+</table>
+
+<%- include('partials/footer') %>

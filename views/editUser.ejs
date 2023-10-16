@@ -1,0 +1,20 @@
+<!-- editUser.ejs -->
+<%- include('partials/header') %>
+
+<h1>Edit User</h1>
+
+<!-- Edit user form -->
+<form action="/admin/update/<%= user._id %>" method="POST">
+    <div class="form-group">
+        <label for="username">Username:</label>
+        <input type="text" class="form-control" id="username" name="username" value="<%= user.username %>">
+    </div>
+    <div class="form-group">
+        <label for="secret">Secret:</label>
+        <input type="text" class="form-control" id="secret" name="secret" value="<%= user.secret %>">
+    </div>
+    <!-- Add more fields as needed -->
+    <button type="submit" class="btn btn-primary">Save Changes</button>
+</form>
+
+<%- include('partials/footer') %>
